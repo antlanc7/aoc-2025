@@ -1,5 +1,5 @@
 const std = @import("std");
-const input = @embedFile("input.txt");
+const input = @embedFile("data/day01.txt");
 
 pub fn part1() !void {
     var pos: isize = 50;

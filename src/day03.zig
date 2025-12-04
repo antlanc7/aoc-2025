@@ -1,5 +1,5 @@
 const std = @import("std");
-const input = @embedFile("input.txt");
+const input = @embedFile("data/day03.txt");
 
 const delimiters = &std.ascii.whitespace;
 
