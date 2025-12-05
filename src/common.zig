@@ -6,8 +6,8 @@ pub const Grid = struct {
     height: usize,
 
     pub fn init(input: []u8) !Grid {
-        const width = std.mem.indexOfScalar(u8, input, '\n') orelse return error.InvalidInput;
-        const height = std.mem.count(u8, input, "\n") + @as(usize, if (input[input.len - 1] != '\n') 1 else 0);
+        const width = std.mem.findScalar(u8, input, '\n') orelse return error.InvalidInput;
+        const height = std.mem.countScalar(u8, input, '\n') + @as(usize, if (input[input.len - 1] != '\n') 1 else 0);
         return .{
             .data = input,
             .width = width,

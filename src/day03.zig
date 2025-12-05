@@ -9,7 +9,7 @@ fn evalBank(bank: []const u8, digits: usize) usize {
     var idx: usize = 0;
     for (0..digits) |i| {
         const curr_bank = bank[idx..(bank.len - (digits - i - 1))];
-        const i_max = std.mem.indexOfMax(u8, curr_bank);
+        const i_max = std.mem.findMax(u8, curr_bank);
         val *= 10;
         val += curr_bank[i_max] - '0';
         idx += i_max + 1;

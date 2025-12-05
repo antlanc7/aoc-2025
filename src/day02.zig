@@ -40,7 +40,7 @@ pub fn main() !void {
     var elems = std.mem.tokenizeAny(u8, input, delimiters);
 
     while (elems.next()) |elem| {
-        const dash = std.mem.indexOfScalar(u8, elem, '-') orelse continue;
+        const dash = std.mem.findScalar(u8, elem, '-') orelse continue;
         const firstId = try std.fmt.parseUnsigned(usize, elem[0..dash], 10);
         const secondId = try std.fmt.parseUnsigned(usize, elem[dash + 1 ..], 10);
         for (firstId..secondId + 1) |id| {
